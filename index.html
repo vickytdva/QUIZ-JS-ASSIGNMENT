@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viktoria's quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Player Selection Page -->
+    <div id="player-selection">
+        <h2>Welcome to Viktoria's Quiz! Please choose number of players</h2>
+        <div class="button-container">
+            <button onclick="choosePlayers(1)">1 Player</button>
+            <button onclick="choosePlayers(2)">2 Players</button>
+            <button onclick="choosePlayers(3)">3 Players</button>
+            <button onclick="choosePlayers(4)">4 Players</button>
+        </div>
+    </div>
+
+    <!-- Category Selection Page -->
+    <div id="category-selection" style="display: none;">
+        <h2>Select Category</h2>
+        <div class="button-container">
+            <button onclick="startGame('html')">HTML</button>
+            <button onclick="startGame('css')">CSS</button>
+            <button onclick="startGame('js')">JavaScript</button>
+            <button onclick="startGame('mixed')">Mixed</button>
+        </div>
+        <button id="back-btn" onclick="goBackToPlayers()">Back to Player Selection</button>
+    </div>
+
+    <!-- Game Play Section -->
+    <div id="game-play" style="display: none;">
+        <div id="player-info">
+            <span id="player-name">Player 1's Turn</span>
+            <div id="time">You have: 10 seconds</div>
+        </div>
+        <div id="timer">10</div>  <!-- Timer countdown -->
+
+        <div id="question"></div>
+
+        <div id="answers"></div>
+
+        <button id="submit-btn" onclick="submitAnswer()" disabled>Submit</button>
+        <button id="next-btn" onclick="nextQuestion()" style="display: none;">Next</button>
+    </div>
+
+    <div id="game-over" style="display:none;">
+        <h2>Game Over</h2>
+        <div id="player-scores">
+          <!-- Player 1 -->
+          <div class="player-score">
+            <h3>Player 1</h3>
+            <p>Score: <span id="score-player-1">0</span> points</p>
+            <div id="answers-player-1"></div>
+          </div>
+          <!-- Player 2 -->
+          <div class="player-score">
+            <h3>Player 2</h3>
+            <p>Score: <span id="score-player-2">0</span> points</p>
+            <div id="answers-player-2"></div>
+          </div>
+          <!-- Player 3 -->
+          <div class="player-score">
+            <h3>Player 3</h3>
+            <p>Score: <span id="score-player-3">0</span> points</p>
+            <div id="answers-player-3"></div>
+          </div>
+          <!-- Player 4 -->
+          <div class="player-score">
+            <h3>Player 4</h3>
+            <p>Score: <span id="score-player-4">0</span> points</p>
+            <div id="answers-player-4"></div>
+          </div>
+        </div>
+        <button onclick="restartGame()">Restart Game</button>
+      </div>
+      
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
